@@ -79,7 +79,7 @@ class vit_bilyet_giro(models.Model):
 		param = res.param_id
 		store = start - timedelta(days=(param.term))
 		if receive_date >= due_date:
-			raise UserError(_('Due Date harus lebih atau sama dengan Receive Date!'))
+			raise UserError(_('Due Date harus lebih besar atau sama dengan Receive Date!'))
 		if submit_date >= str(store):
 			raise UserError(_('Submit Date harus kurang atau sama dengan %s hari sebelum Due Date!')  % (param.term))
 		return res
